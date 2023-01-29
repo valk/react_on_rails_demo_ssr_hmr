@@ -29,7 +29,7 @@ bundle install
 yarn install
 ```
 
-Use the provided Procfiles to run webpack and rails together, like `overmind start -f Procfile.dev`
+Use the provided Procfiles to run webpack and rails together, like `foreman start -f Procfile.dev`
 
 1. **`Procfile.dev`**: Uses the [webpack-dev-server](https://webpack.js.org/configuration/dev-server/). This will proxy asset requests to the webpack-dev-server except for a few files: the `manifest.json` and the `server-bundle.js` which are in the standard `public/webpack/development` folder.
 2. **`Procfile.dev-static`**: Uses the standard files in the `public/webpack/development` folder. Note, the standard webpack config in `/config/webpack` outputs an array which builds both the client and server bundles.
@@ -37,13 +37,13 @@ Use the provided Procfiles to run webpack and rails together, like `overmind sta
 ## Running with HMR
 
 ```
-overmind start -f Procfile.dev
+foreman start -f Procfile.dev
 ```
 
 ## Running without HMR, statically creating the bundles
 
 ```
-overmind start -f Procfile.dev-static
+foreman start -f Procfile.dev-static
 ```
 
 ## Testing Functionality of SSR and HMR
